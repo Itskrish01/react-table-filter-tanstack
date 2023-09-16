@@ -1,12 +1,12 @@
 # Install JSON-SERVER
 
-```js
+```bash
 npm install -g json-server
 ```
 
 ## run the json-server
 
-```js
+```bash
 json-server db.json
 ```
 
