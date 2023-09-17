@@ -2,6 +2,7 @@ import { X } from "lucide-react";
 import DebouncedInput from "./DebouncedInput";
 import Filter from "./Filter";
 import { useTableContext } from "../Context/TableContext";
+import { HeaderGroup } from "@tanstack/react-table";
 
 export const Sidebar = ({
     globalFilter = "",
@@ -53,7 +54,7 @@ export const Sidebar = ({
                 </div>
                 <div className="">
                     {table &&
-                        table.getHeaderGroups().map((headerGroup) => (
+                        table.getHeaderGroups().map((headerGroup: HeaderGroup<any>) => (
                             <div key={headerGroup.id}>
                                 {headerGroup.headers.map((header) => (
                                     <div key={header.id}>

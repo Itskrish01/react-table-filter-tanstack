@@ -9,8 +9,8 @@ import { UserTableProps } from "../constants/commontypes";
 import {
     flexRender,
 } from '@tanstack/react-table';
-import { Button } from "./Button";
 import { Loader } from "./Loader";
+import { Button } from "./ui/button";
 
 function UserTable(props: UserTableProps) {
     const { isLoading, isError, table } = props;
@@ -77,24 +77,28 @@ function UserTable(props: UserTableProps) {
 
                 <div className="flex items-center justify-center gap-2 mt-3 py-2">
                     <Button
+                        variant="outline"
                         onClick={() => table.setPageIndex(0)}
                         disabled={!table.getCanPreviousPage()}
                     >
                         <ChevronsLeft />
                     </Button>
                     <Button
+                        variant="outline"
                         onClick={() => table.previousPage()}
                         disabled={!table.getCanPreviousPage()}
                     >
                         <ChevronLeft />
                     </Button>
                     <Button
+                        variant="outline"
                         onClick={() => table.nextPage()}
                         disabled={!table.getCanNextPage()}
                     >
                         <ChevronRight />
                     </Button>
                     <Button
+                        variant="outline"
                         onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                         disabled={!table.getCanNextPage()}
                     >

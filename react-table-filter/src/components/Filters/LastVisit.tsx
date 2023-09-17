@@ -23,7 +23,7 @@ const LastVisit = ({ column }) => {
         setSelectedDate(undefined)
     }
     return (
-        <div className={`border rounded-lg p-3 transition-all duration-200 ${selectedDate ? 'border-indigo-500' : "border-gray-400"}`}>
+        <div className={`border rounded-lg p-3 transition-all duration-200 ${selectedDate ? 'border-indigo-500' : "border-gray-300"}`}>
             <div className="flex items-center gap-2">
                 <h6 className="text-base font-semibold">By last visit</h6>
                 {selectedDate && <X size={15} className="text-red-500 cursor-pointer" onClick={handleClearFilter} />}

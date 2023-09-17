@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 const AgeComboBox = ({ column }) => {
     const { selectedAge, setSelectedAge } = useTableContext()
 
-    const handleAgeChange = (value) => {
+    const handleAgeChange = (value: string) => {
         setSelectedAge(value);
     };
 
@@ -26,7 +26,7 @@ const AgeComboBox = ({ column }) => {
         setSelectedAge(undefined)
     }
     return (
-        <div className={`border rounded-lg p-3 transition-all duration-200 ${selectedAge ? 'border-indigo-500' : "border-gray-400"}`}>
+        <div className={`border rounded-lg p-3 transition-all duration-200 ${selectedAge ? 'border-indigo-500' : "border-gray-300"}`}>
             <div className="flex items-center gap-2  ">
                 <h6 className="text-base font-semibold">By Age</h6>
                 {selectedAge && <X size={15} className="text-red-500 cursor-pointer" onClick={handleClearFilter} />}

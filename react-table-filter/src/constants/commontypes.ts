@@ -1,6 +1,5 @@
 import { Table } from "@tanstack/react-table";
 import { Slider } from "../components/ui/slider";
-import { AxiosError } from "axios";
 
 export type User = {
   id: number;
