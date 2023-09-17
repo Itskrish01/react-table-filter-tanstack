@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect, useMemo } from "react"
 import Header from './components/Header'
 import { useQuery } from "@tanstack/react-query"
-import { getUser } from './lib/utils'
+import { getUsers } from './lib/utils'
 import UserTable from './components/Table'
 import { Sidebar } from './components/Sidebar'
 import { useState } from 'react'
@@ -23,9 +23,9 @@ const columnHelper = createColumnHelper<User>();
 
 function App() {
   const dateFilter: any = (rows: any, id: any, filterValue: any) => {
-    let start = moment(new Date())
-    let end = moment(filterValue)
-    return moment(rows.original.last_visit).isBetween(end, start)
+    let currentDate = moment(new Date())
+    let selectedDate = moment(filterValue)
+    return moment(rows.original.last_visit).isBetween(selectedDate, currentDate)
   }
 
   const columns = useMemo(
@@ -53,7 +53,7 @@ function App() {
     ],
     [])
 
-  const { data, isLoading, isError } = useQuery({ queryKey: ['user'], queryFn: getUser })
+  const { data, isLoading, isError } = useQuery({ queryKey: ['user'], queryFn: getUsers })
   const { isMobileSidebarOpen, setIsMobileSidebarOpen } = useTableContext()
   const [globalFilter, setGlobalFilter] = useState("")
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])

@@ -8,7 +8,7 @@ export default function Filter({ column }: { column: Column<any, unknown> }) {
     switch (column.id) {
         case 'status':
             return (
-                <div className="mt-6">
+                <div className="mt-4">
                     <ByStatus column={column} />
                     <div className="h-1" />
                 </div>
@@ -16,7 +16,7 @@ export default function Filter({ column }: { column: Column<any, unknown> }) {
 
         case 'age':
             return (
-                <div className="mt-6">
+                <div className="mt-4">
                     <AgeComboBox column={column} />
                     <div className="h-1" />
                 </div>
@@ -24,7 +24,7 @@ export default function Filter({ column }: { column: Column<any, unknown> }) {
 
         case 'last_visit':
             return (
-                <div className="mt-6">
+                <div className="mt-4">
                     <LastVisit column={column} />
                     <div className="h-1" />
                 </div>
@@ -32,7 +32,7 @@ export default function Filter({ column }: { column: Column<any, unknown> }) {
 
         case 'likes':
             return (
-                <div className="mt-6">
+                <div className="mt-4">
                     <LikesSlider column={column} />
                     <div className="h-1" />
                 </div>

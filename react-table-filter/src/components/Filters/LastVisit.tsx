@@ -4,7 +4,7 @@ import { useTableContext } from "../../Context/TableContext"
 import moment from "moment"
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover"
 import { Button } from "../ui/button"
-import { cn } from "../../lib"
+import { cn } from "../../lib/lib"
 import { Calendar } from "../ui/calendar"
 
 const LastVisit = ({ column }) => {
@@ -23,7 +23,7 @@ const LastVisit = ({ column }) => {
         setSelectedDate(undefined)
     }
     return (
-        <div className="mt-5  ">
+        <div className={`border rounded-lg p-3 transition-all duration-200 ${selectedDate ? 'border-indigo-500' : "border-gray-400"}`}>
             <div className="flex items-center gap-2">
                 <h6 className="text-base font-semibold">By last visit</h6>
                 {selectedDate && <X size={15} className="text-red-500 cursor-pointer" onClick={handleClearFilter} />}

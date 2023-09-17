@@ -67,7 +67,7 @@ const ByStatus: React.FC<ByStatusProps> = ({ column }) => {
     };
 
     return (
-        <div className="mt-5">
+        <div className={`border rounded-lg p-3 transition-all duration-200 ${selectedStatus.length !== 0 ? 'border-indigo-500' : "border-gray-400"}`}>
             <div className="flex items-center gap-2">
                 <h6 className="text-base font-semibold">By status</h6>
                 {selectedStatus.length > 0 && (
