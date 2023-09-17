@@ -24,7 +24,7 @@ const MobileSidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, globalFilt
                         className="min-h-screen md:hidden fixed top-0 z-[2] left-0 flex-row bg-gray-100"
                     >
                         <div className='md:hidden block basis-1/4 h-full bg-white'>
-                            {/* <X className='relative left-60' onClick={() => setIsMobileSidebarOpen(false)} /> */}
+                            <X className='relative left-60' onClick={() => setIsMobileSidebarOpen(false)} />
                             <Sidebar globalFilter={globalFilter} setGlobalFilter={setGlobalFilter} table={table} columnFilters={columnFilters} setColumnFilters={setColumnFilters} />
                         </div>
                     </motion.div>
