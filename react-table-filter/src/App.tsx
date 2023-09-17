@@ -39,7 +39,7 @@ function App() {
       }),
       columnHelper.accessor('status', {
         header: () => "Status",
-        cell: info => info.renderValue(),
+        cell: (info) => info.renderValue(),
         filterFn: 'arrIncludesSome'
       }),
       columnHelper.accessor('last_visit', {
@@ -53,7 +53,7 @@ function App() {
     ],
     [])
 
-  const { data, isLoading, isError } = useQuery({ queryKey: ['user'], queryFn: getUsers })
+  const { data, isLoading, isError, error } = useQuery({ queryKey: ['user'], queryFn: getUsers })
   const { isMobileSidebarOpen, setIsMobileSidebarOpen } = useTableContext()
   const [globalFilter, setGlobalFilter] = useState("")
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])

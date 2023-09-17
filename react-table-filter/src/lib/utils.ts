@@ -9,5 +9,6 @@ export const getUsers = async (): Promise<User[]> => {
     return response.data;
   } catch (err) {
     console.log(err);
+    return err;
   }
 };

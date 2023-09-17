@@ -14,7 +14,7 @@ const AgeComboBox = ({ column }) => {
     useEffect(() => {
         if (selectedAge) {
             if (selectedAge < 60) {
-                column.setFilterValue(() => [Number(selectedAge), Number(selectedAge) + 9])
+                column.setFilterValue(() => [Number(selectedAge), Number(selectedAge) + 9]) //[30, 39]
             } else {
                 column.setFilterValue(() => [60, 100])
             }
